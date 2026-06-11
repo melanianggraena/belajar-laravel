@@ -43,3 +43,8 @@ Route::get('/api/info', function () {
     ]);
 });
 
+// Tambahkan route baru untuk halaman halo
+Route::get('/halo-blade', function () {
+    return view('halo');
+});
+
