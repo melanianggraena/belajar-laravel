@@ -106,3 +106,14 @@ Route::get('/blade-latihan', function () {
     ));
 });
 
+// ==================================================================================
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+Route::get('/tentang-kami', function () {
+    return view('tentang');
+})->name('tentang');
+Route::get('/kontak', function () {
+    return view('pages.kontak');
+})->name('kontak');
+
