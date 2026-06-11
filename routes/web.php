@@ -76,3 +76,33 @@ Route::get('/profil-mahasiswa', function () {
     //     ->with('nim', '12345678');
 });
 
+// ==================================================================================
+Route::get('/blade-latihan', function () {
+
+    $nama = 'Andi Pratama';
+    $ipk = 3.75;
+    $statusMahasiswa = 'aktif';
+
+    $mahasiswas = [
+        [
+            'nama' => 'Andi',
+            'nim' => '123'
+        ],
+        [
+            'nama' => 'Budi',
+            'nim' => '456'
+        ],
+        [
+            'nama' => 'Citra',
+            'nim' => '789'
+        ]
+    ];
+
+    return view('blade-latihan', compact(
+        'nama',
+        'ipk',
+        'statusMahasiswa',
+        'mahasiswas'
+    ));
+});
+
