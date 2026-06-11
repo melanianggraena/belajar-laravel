@@ -8,6 +8,11 @@
 
 {{-- @section('content') mengisi slot @yield('content') di layout --}}
 @section('content')
+<x-alert type="success" message="Selamat datang di Laravel 13!" />
+<x-alert type="warning" message="Ini adalah latihan Blade Component." />
+<x-alert type="danger" message="Contoh alert error Bootstrap." />
+
+
     {{-- Jumbotron / Hero Section --}}
     <div class="p-5 mb-4 bg-dark text-white rounded-3">
         <div class="container-fluid py-3">
