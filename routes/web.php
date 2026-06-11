@@ -1,7 +1,45 @@
 <?php
 
+// File: routes/web.php
+
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+// ============================================================
+// CONTOH 1: Route paling sederhana - return string
+// ============================================================
+Route::get('/halo', function () {
+    return 'Halo Dunia! Ini adalah halaman pertama saya di Laravel!';
 });
+
+// ============================================================
+// CONTOH 2: Route dengan parameter
+// ============================================================
+Route::get('/sapa/{nama}', function (string $nama) {
+    return 'Halo, ' . $nama . '! Selamat datang di Laravel.';
+});
+
+// ============================================================
+// CONTOH 3: Route dengan parameter opsional
+// ============================================================
+Route::get('/profil/{nama?}', function (string $nama = 'Tamu') {
+    return 'Profil pengguna: ' . $nama;
+});
+
+// ============================================================
+// CONTOH 4: Route dengan nama (named route)
+// ============================================================
+Route::get('/tentang-kami', function () {
+    return view('tentang');
+})->name('tentang');
+
+// ============================================================
+// CONTOH 5: Route yang mengembalikan JSON
+// ============================================================
+Route::get('/api/info', function () {
+    return response()->json([
+        'aplikasi' => 'Belajar Laravel',
+        'versi'    => '1.0.0',
+        'status'   => 'aktif',
+    ]);
+});
+
