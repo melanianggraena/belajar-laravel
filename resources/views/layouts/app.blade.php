@@ -17,7 +17,7 @@
     {{-- Slot untuk CSS tambahan khusus halaman tertentu --}}
     @stack('styles')
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     {{-- ===== NAVIGASI ===== --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -46,7 +46,7 @@
     </nav>
 
     {{-- ===== KONTEN UTAMA ===== --}}
-    <main class="container my-4">
+    <main class="container my-4 flex-grow-1">
         {{-- Flash message untuk notifikasi --}}
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
