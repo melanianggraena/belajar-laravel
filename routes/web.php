@@ -48,3 +48,31 @@ Route::get('/halo-blade', function () {
     return view('halo');
 });
 
+// ==================================================================================
+
+Route::get('/profil-mahasiswa', function () {
+    // Cara 1: Menggunakan array compact()
+    $nama  = 'Andi Pratama';
+    $nim   = '12345678';
+    $jurusan = 'Teknik Informatika';
+    $semester = 3;
+    $ipk   = 3.75;
+
+    return view('profil-mahasiswa', compact('nama', 'nim', 'jurusan', 'semester', 'ipk'));
+    // compact() mengambil nama variabel dan nilainya menjadi array
+
+    // Cara 2: Menggunakan array manual (ekuivalen dengan cara 1)
+    // return view('profil-mahasiswa', [
+    //     'nama'     => 'Andi Pratama',
+    //     'nim'      => '12345678',
+    //     'jurusan'  => 'Teknik Informatika',
+    //     'semester' => 3,
+    //     'ipk'      => 3.75,
+    // ]);
+
+    // Cara 3: Menggunakan method with() (method chaining)
+    // return view('profil-mahasiswa')
+    //     ->with('nama', 'Andi Pratama')
+    //     ->with('nim', '12345678');
+});
+
